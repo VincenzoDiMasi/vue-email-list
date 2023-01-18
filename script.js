@@ -7,6 +7,7 @@ const app = Vue.createApp({
          emails: [],
          apiUri : 'https://flynn.boolean.careers/exercises/api/random/mail',
          emailLot : 10,
+         isLoading: true,
 
         }
     },
@@ -16,6 +17,9 @@ const app = Vue.createApp({
             axios.get(this.apiUri).then( response =>{
               this.emails.push(response.data.response);
             })
+            .finally(() => {
+                this.isLoading = false
+              })
           }
        }
     },

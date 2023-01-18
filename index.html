@@ -19,7 +19,8 @@
      <script defer src="script.js"></script>
 </head>
 <body>
-    <div id="root" class="container my-3">
+    <div v-else id="root" class="container my-3">
+        <div v-if="isLoading">Loading...</div>
         <ul>
             <li v-for="(email,i) in emails">{{ email }}</li>
           </ul>
