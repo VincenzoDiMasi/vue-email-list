@@ -19,11 +19,12 @@
      <script defer src="script.js"></script>
 </head>
 <body>
-    <div v-else id="root" class="container my-3">
-        <div v-if="isLoading">Loading...</div>
-        <ul>
+    <div id="root" class="container my-3">
+        <ul v-if="emails.length === 10">
             <li v-for="(email,i) in emails">{{ email }}</li>
-          </ul>
+        </ul>
+        <div v-else="isLoading">Loading...</div>
+
     </div>
 </body>
 </html>
